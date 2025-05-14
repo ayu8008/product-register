@@ -49,3 +49,12 @@ jobs:
 
       - name: Run tests
         run: docker-compose exec -T web rails test RAILS_ENV=test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Trigger Render Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
