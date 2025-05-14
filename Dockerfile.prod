@@ -10,6 +10,7 @@ COPY Gemfile Gemfile.lock /product-register/
 RUN bundle install
 COPY . .
 ENV RAILS_ENV=production
+ENV DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 # アセットを本番用にプリコンパイル
 RUN bundle exec rails assets:precompile
