@@ -12,7 +12,4 @@ COPY . .
 ENV RAILS_ENV=production
 ENV DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
-# アセットを本番用にプリコンパイル
-RUN bundle exec rails assets:precompile
-
 CMD ["bash", "-c", "bundle exec rails db:migrate && bundle exec rails s -e production -b 0.0.0.0"]
