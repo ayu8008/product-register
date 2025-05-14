@@ -89,7 +89,7 @@ Rails.application.configure do
 
 
   # 手動で追記
-  config.hosts << /.*\.onrender\.com/
+  config.hosts << "product-register-f0y6.onrender.com"
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
